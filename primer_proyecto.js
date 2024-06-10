@@ -1,3 +1,5 @@
+/**  sin funcion
+
 let continuar = true;
 
 while (continuar) {
@@ -21,6 +23,41 @@ while (continuar) {
     else{
         alert("Selección inválida. Por favor, ingrese un número válido.");
         continue;}
+
+    continuar = confirm("¿Quieres seleccionar otro producto?");
+}
+
+alert("Gracias por tu compra.");
+
+*/
+
+
+let continuar = true;
+
+function MensajeProducto(seleccion) {
+    switch (seleccion) {
+        case "1":
+            return "Has seleccionado: Remera. Precio: $15000";
+        case "2":
+            return "Has seleccionado: Pantalon. Precio: $10000";
+        case "3":
+            return "Has seleccionado: Buzo. Precio: $30000";
+        case "4":
+            return "Has seleccionado: Zapatillas. Precio: $50000";
+        default:
+            return "Selección inválida. Por favor, ingrese un número válido.";
+    }
+}
+
+while (continuar) {
+    let seleccion = prompt("Selecciona un producto: 1: Remera $15000\ 2: Pantalon $10000\ 3: Buzo $30000\ 4: Zapatillas $50000");
+    let mensaje = MensajeProducto(seleccion);
+
+    alert(mensaje);
+    
+    if (mensaje === "Selección inválida. Por favor, ingrese un número válido.") {
+        continue;
+    }
 
     continuar = confirm("¿Quieres seleccionar otro producto?");
 }
